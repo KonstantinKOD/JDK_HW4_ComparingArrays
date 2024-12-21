@@ -10,9 +10,21 @@ package KR;
 во втором массиве под нулевым индексом (и под всеми остальными индексами аналогично)
  */
 
-public class Main {
+import java.util.Arrays;
 
-    public static void main(String[] args) {
-        Menu.start();
+public class CompareArr {
+    public static  <T> boolean compareArrays(T[] arr1, T [] arr2) {
+        if (arr1.length != arr2.length){
+            System.out.print("\nДлина массивов НЕ равна!\n");
+            return false;
+        }
+        for (int i = 0; i < arr1.length; i++) {
+            if (!arr1[i].equals(arr2[i])){
+                System.out.printf("\nЭлементы по индексом %d НЕ равны!\n", i);
+                return false;
+            }
+        }
+        System.out.println("\nМассивы равны!\n");
+        return true;
     }
 }
